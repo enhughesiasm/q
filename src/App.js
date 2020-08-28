@@ -1,7 +1,7 @@
 import React from 'react';
 import ErrorBoundary from './error_boundary';
 
-import { Switch, BrowserRouter, Route } from 'react-router-dom';
+import { Switch, BrowserRouter, Route, HashRouter } from 'react-router-dom';
 import Quiz from './components/quiz/quiz';
 import AdminGate from './components/admin/admin_gate';
 import Scores from './components/scores/scores';
@@ -10,7 +10,7 @@ console.log(process.env.PUBLIC_URL);
 
 const App = () => (
 	<ErrorBoundary>
-		<BrowserRouter basename='/q'>
+		<HashRouter basename='/q'>
 			<Switch>
 				<Route
 					exact
@@ -32,7 +32,7 @@ const App = () => (
 				/>
 				<Route component={NotFound} />
 			</Switch>
-		</BrowserRouter>
+		</HashRouter>
 	</ErrorBoundary>
 );
 
