@@ -1,11 +1,11 @@
-const dev = true;
+const prod = process.env.NODE_ENV === 'production';
 
 const config = {
-	isDev: dev,
+	isDev: !prod,
 	socket: {
-		protocol: dev ? 'http' : 'https',
-		port: dev ? 4008 : 4008,
-		address: dev ? 'localhost' : 's.enhughesiasm.com',
+		protocol: !prod ? 'http' : 'https',
+		port: !prod ? 4008 : 4008,
+		address: !prod ? 'localhost' : 's.enhughesiasm.com',
 	},
 	quiz: {
 		showRoundFinishedScreenForMilliseconds: 5000,
