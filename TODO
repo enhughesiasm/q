@@ -1,0 +1,5 @@
+1) get this dodgy version running on live again
+2) rewrite front-end using modern react + typescript
+   - redesign API as you go, and make the back end MUCH MUCH better, it's a mess right now. 
+   - also have typescript + shared interface objects for the API to keep it all sane.
+3) fix all the features, much better admin tools, actual authentication and permissions etc

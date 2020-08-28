@@ -1,26 +1,24 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import ErrorBoundary from './error_boundary';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+import { Switch, BrowserRouter, Route } from 'react-router-dom';
+import Quiz from './components/quiz/quiz';
+import AdminGate from './components/admin/admin_gate';
+import Scores from './components/scores/scores';
+
+const App = () => (
+	<ErrorBoundary>
+		<BrowserRouter>
+			<Switch>
+				<Route exact path='/' component={Quiz} />
+				<Route exact path='/admin' component={AdminGate} />
+				<Route exact path='/scores' component={Scores} />
+				<Route component={NotFound} />
+			</Switch>
+		</BrowserRouter>
+	</ErrorBoundary>
+);
 
 export default App;
+
+const NotFound = () => <h1>404.. Page not found!</h1>;

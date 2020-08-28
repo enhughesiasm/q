@@ -1,0 +1,4 @@
+/* override mathjax so long questions wrap properly */
+.mjx-chtml{
+	white-space: normal !important;
+}
