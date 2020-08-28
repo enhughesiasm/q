@@ -1,4 +1,9 @@
 1) get this dodgy version running on live again
+ - get a proper npm run liveserver command on q-server; make sure that starts robustly when Custard2020 reboots
+ - (copy it from s.enhughesiasm.com)
+ b) finish DNS propagation and get the page running at q.enhughesiasm.com
+ c) update the enhughesiasm homepage to link to q.enhughesiasm.com again
+
 2) rewrite front-end using modern react + typescript
    - redesign API as you go, and make the back end MUCH MUCH better, it's a mess right now. 
    - also have typescript + shared interface objects for the API to keep it all sane.
