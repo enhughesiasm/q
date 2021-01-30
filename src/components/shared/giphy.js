@@ -8,7 +8,7 @@ class Giphy extends Component {
 		super(props);
 		this.state = {
 			apiKey: '9LYRB89KKFIH8WgVUetwuoQCB0LihwnT',
-			endPoint: 'http://api.giphy.com/v1/gifs/random',
+			endPoint: 'https://api.giphy.com/v1/gifs/random',
 			rating: 'g', // 'Y, G, PG, PG-13 and R'
 			imgUrl: '',
 			visible: false,

@@ -42,7 +42,7 @@ class SessionForm extends Component {
 						style={{ width: '100%' }}>
 						Welcome.
 					</legend>
-					<div className='px-4 pb-4'>
+					<div className='px-4 pb-4' style={{ width: '100%' }}>
 						<div className='field'>
 							<label className='label' htmlFor='playerName'>
 								Name

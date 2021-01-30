@@ -1,5 +1,5 @@
 // customise Bulma variables
-$family-sans-serif: "Jost*", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$family-sans-serif: 'Jost*', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 $grey-dark: brown;
 $grey-light: beige;
 $primary: #ec1515;
@@ -8,36 +8,37 @@ $body-size: 14px;
 $section-padding: 2rem 1.4rem;
 $notification-padding: 1rem 2.5rem 1rem 1.5rem;
 
-
 $navbar-padding-vertical: 3rem;
-$navbar-height: 7rem;
-$footer-height: 2rem;
-$footer-vertical-padding: 3rem;
+$navbar-height: 5rem;
+$footer-height: 1rem;
+$footer-vertical-padding: 1rem;
 $footer-padding: #{$footer-vertical-padding} 1.5rem 6rem;
-$wrapper-height: calc(100vh - #{$navbar-height} - #{$footer-height} - #{$footer-vertical-padding} - #{$footer-vertical-padding});
-
+$wrapper-height: calc(
+	100vh - #{$navbar-height} - #{$footer-height} - #{$footer-vertical-padding} -
+		#{$footer-vertical-padding}
+);
 
 /* stick footer */
 body {
 	&.default {
-	  display: flex;
-	  // use this if navbar is NOT fixed (default)
-	  min-height: 100vh;
-	  flex-direction: column;
+		display: flex;
+		// use this if navbar is NOT fixed (default)
+		min-height: 100vh;
+		flex-direction: column;
 	}
 	&.fixed {
-	  display: flex;
-	  // use this if navbar is fixed
-	  min-height: $wrapper-height;  
-	  flex-direction: column;
+		display: flex;
+		// use this if navbar is fixed
+		min-height: $wrapper-height;
+		flex-direction: column;
 	}
-  }
+}
 
 #wrapper {
 	display: flex;
-flex: 1 0 auto;
-min-height: $wrapper-height;
+	flex: 1 0 auto;
+	min-height: $wrapper-height;
 }
 /* end stick footer */
 
-@import 'node_modules/bulma/bulma'
+@import 'node_modules/bulma/bulma';

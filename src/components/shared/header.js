@@ -15,7 +15,7 @@ const NavBar = () => (
 		role='navigation'
 		aria-label='main navigation'>
 		<div className='navbar-brand'>
-			<h1 className='is-size-1 has-text-weight-bold has-text-centered px-4 py-3'>
+			<h1 className='is-size-1 has-text-weight-bold has-text-centered px-4'>
 				q
 			</h1>
 		</div>

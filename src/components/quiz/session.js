@@ -7,30 +7,42 @@ import TeamAssigned from './team_assigned';
 import moment from 'moment';
 
 class Session extends Component {
-
 	render() {
-
 		let showTeamAssignedUntil = this.props.showTeamAssignedScreenUntil;
-		let showTeamAssignedScreen = (showTeamAssignedUntil && moment().isBefore(showTeamAssignedUntil));
+		let showTeamAssignedScreen =
+			showTeamAssignedUntil && moment().isBefore(showTeamAssignedUntil);
 
 		return (
-			<section className="section">
-				{!this.props.player.team &&
-				<AssigningTeam />
-				}
-				{ showTeamAssignedScreen && <TeamAssigned team={this.props.player.team} /> }
-				{
-					(!showTeamAssignedScreen && this.props.player.team) &&
-					<div>
-						{ (this.props.session.isLive) &&
-							<LiveSession initialLoadComplete={this.props.initialLoadComplete} session={this.props.session} player={this.props.player} rounds={this.props.rounds} playerStatus={this.props.playerStatus}/>
-						}
-						{ (!this.props.session.isLive) &&
-							<WaitingForSession team={this.props.player.team} playerName={this.props.player.name} sessionName={this.props.session.name}/>
-						}
-					</div>
-				}
+			<section className='section'>
+				{!this.props.player.team && <AssigningTeam />}
+				{showTeamAssignedScreen && (
+					<TeamAssigned team={this.props.player.team} />
+				)}
+				{!showTeamAssignedScreen && this.props.player.team && (
+					<>
+						{!!this.props.session.isLive && (
+							<LiveSession
+								initialLoadComplete={
+									this.props.initialLoadComplete
+								}
+								session={this.props.session}
+								player={this.props.player}
+								rounds={this.props.rounds}
+								playerStatus={this.props.playerStatus}
+							/>
+						)}
 
+						{!this.props.session.isLive && (
+							<>
+								<WaitingForSession
+									team={this.props.player.team}
+									playerName={this.props.player.name}
+									sessionName={this.props.session.name}
+								/>
+							</>
+						)}
+					</>
+				)}
 			</section>
 		);
 	}
@@ -38,11 +50,11 @@ class Session extends Component {
 
 export default Session;
 
-Session.propTypes = {	
+Session.propTypes = {
 	showTeamAssignedScreenUntil: PropTypes.object,
 	initialLoadComplete: PropTypes.bool.isRequired,
 	rounds: PropTypes.object.isRequired,
 	session: PropTypes.object.isRequired,
 	player: PropTypes.object.isRequired,
-	playerStatus: PropTypes.object.isRequired
+	playerStatus: PropTypes.object.isRequired,
 };

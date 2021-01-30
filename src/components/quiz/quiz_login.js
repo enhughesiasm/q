@@ -3,9 +3,9 @@ import socketIOClient from 'socket.io-client';
 import Session from './session';
 import SessionForm from './session_form';
 import moment from 'moment';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCircle, faCircleNotch } from '@fortawesome/free-solid-svg-icons';
 import config from '../../config';
+import QuizExplanation from './quiz_explanation';
+import ConnectionIndicator from './connection_indicator';
 
 class QuizLogin extends Component {
 	constructor(props) {
@@ -611,11 +611,14 @@ class QuizLogin extends Component {
 					/>
 				)}
 				{!this.state.session && (
-					<SessionForm
-						sessionForm={this.state.sessionForm}
-						handleChange={this.handleSessionFormChange}
-						handleSubmit={this.handleSessionFormSubmit}
-					/>
+					<>
+						<SessionForm
+							sessionForm={this.state.sessionForm}
+							handleChange={this.handleSessionFormChange}
+							handleSubmit={this.handleSessionFormSubmit}
+						/>
+						<QuizExplanation />
+					</>
 				)}
 				{this.state.sessionForm.hasSubmitted && !this.state.session && (
 					<div className='notification is-warning'>
@@ -626,20 +629,8 @@ class QuizLogin extends Component {
 						is not currently a valid session.
 					</div>
 				)}
-				<div className='has-text-centered'>
-					<FontAwesomeIcon
-						icon={
-							this.state.socket.connected
-								? faCircle
-								: faCircleNotch
-						}
-						style={{
-							color: this.state.socket.connected
-								? 'green'
-								: 'red',
-						}}
-					/>
-				</div>
+
+				<ConnectionIndicator connected={this.state.socket.connected} />
 			</section>
 		);
 	}
