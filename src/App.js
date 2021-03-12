@@ -1,12 +1,12 @@
 import React from 'react';
 import ErrorBoundary from './error_boundary';
 
-import { Switch, BrowserRouter, Route, HashRouter } from 'react-router-dom';
+import { Switch, Route, HashRouter } from 'react-router-dom';
 import Quiz from './components/quiz/quiz';
 import AdminGate from './components/admin/admin_gate';
 import Scores from './components/scores/scores';
 
-console.log(process.env.PUBLIC_URL);
+// console.log(process.env.PUBLIC_URL);
 
 const App = () => (
 	<ErrorBoundary>

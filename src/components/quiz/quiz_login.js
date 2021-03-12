@@ -126,6 +126,13 @@ class QuizLogin extends Component {
 		);
 
 		socket.on(
+			'error loading question',
+			((roundInstanceId) => {
+				console.log('error loading question!');
+			}).bind(this)
+		);
+
+		socket.on(
 			'disconnect',
 			(() => {
 				this.forceUpdate();

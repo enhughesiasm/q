@@ -1,4 +1,11 @@
-/* override mathjax so long questions wrap properly */
-.mjx-chtml{
+/* DEPRECATED, replaced with katex 
+	override mathjax so long questions wrap properly */
+.mjx-chtml {
 	white-space: normal !important;
+}
+
+/* override katex so long questions wrap properly */
+.katex .base {
+	white-space: normal !important;
+	width: auto !important;
 }
