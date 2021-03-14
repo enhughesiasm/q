@@ -25,12 +25,25 @@ const TeamStatus = (props) => {
 								style={{
 									background: team.colour,
 								}}>
-								<span>
+								<span className='has-text-weight-bold'>
 									Team {team.name}
 									{/* {ts.playerCount} player */}
-									{ts.playerCount > 1 ? 's' : ''}:{' '}
+									{/* {ts.playerCount > 1 ? 's' : ''}:{' '} */}
 								</span>
 								<br />
+								{ts.playerNames &&
+									Array.isArray(ts.playerNames) && (
+										<div>
+											{ts.playerNames.map((name) => (
+												<span
+													key={`team-${i}-${name}`}
+													className='is-size-5 is-size-6-mobile mx-3 my-1 py-1'>
+													{name}
+												</span>
+											))}
+										</div>
+									)}
+
 								<span className='has-text-weight-bold is-size-3 is-size-5-mobile'>
 									{ts.totalScore ? ts.totalScore : 0} points
 								</span>

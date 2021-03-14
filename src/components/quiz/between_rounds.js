@@ -3,10 +3,11 @@ import PropTypes from 'prop-types';
 import WelcomeBanner from './welcome_banner';
 import TeamStatus from './team_status';
 import PlayerRounds from './player_rounds_table';
-import LoadingQuestion from './live_round/loading_question';
 
 const BetweenRounds = (props) => {
 	let completedRounds = props.rounds.slice(0, props.finishedRounds);
+
+	console.log(props.playerStatus);
 
 	return (
 		<div>
@@ -25,13 +26,14 @@ const BetweenRounds = (props) => {
 									teams={props.teams}
 								/>
 							)}
-						<h2 className='subtitle is-size-6-mobile'>
+						<hr />
+						<h2 className='subtitle is-size-6-mobile bo'>
 							After{' '}
 							<span className='has-text-info is-size-4 is-size-5-mobile has-text-weight-bold'>
 								{props.finishedRounds}
 							</span>{' '}
 							round{props.finishedRounds > 1 ? 's' : ''}, your
-							score is{' '}
+							personal score is{' '}
 							<span
 								className={
 									(props.playerStatus.totalScore < 0
@@ -61,7 +63,7 @@ const BetweenRounds = (props) => {
 							</span>{' '}
 							correctly
 							<span className='has-text-info'>
-								{props.playerStatus.questionsAnswered != 0
+								{props.playerStatus.questionsAnswered !== 0
 									? ' (' +
 									  Math.round(
 											100 *
@@ -74,6 +76,10 @@ const BetweenRounds = (props) => {
 									: ''}
 							</span>
 						</h3>
+						<hr />
+						<p className='has-text-black'>
+							Here&apos;s how you did in each round so far:
+						</p>
 						<PlayerRounds
 							playerStatus={props.playerStatus}
 							completedRounds={completedRounds}

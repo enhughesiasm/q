@@ -19,7 +19,9 @@ const PlayerRounds = (props) => {
 						);
 						return (
 							<tr key={i}>
-								<td>Round {i + 1}</td>
+								<td style={{ minWidth: '50%' }}>
+									Round {i + 1}
+								</td>
 								<td>{completedRound.name}</td>
 								<td
 									className={
