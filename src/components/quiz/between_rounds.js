@@ -94,6 +94,15 @@ const BetweenRounds = (props) => {
 						<h2 className='subtitle is-size-5-mobile'>
 							Stay tuned, the first round will be along shortly...
 						</h2>
+						{props.playerStatus &&
+							props.playerStatus.teamStatus && (
+								<TeamStatus
+									teamStatus={props.playerStatus.teamStatus}
+									playerTeam={props.player.team}
+									teams={props.teams}
+								/>
+							)}
+						<hr />
 					</div>
 				</div>
 			)}

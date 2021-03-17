@@ -239,7 +239,7 @@ class QuizLogin extends Component {
 		let counter = this.state.statusUpdateCounter;
 
 		if (
-			counter > 15 ||
+			counter > 20 ||
 			(!this.state.initial.statusAfterPlayerLoad && this.state.player)
 		) {
 			// check the player status every now and then

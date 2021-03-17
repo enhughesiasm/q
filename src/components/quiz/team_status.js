@@ -8,7 +8,7 @@ const TeamStatus = (props) => {
 		props.teams.length > 0;
 
 	return (
-		<div className='notification is-white tile is-parent mx-4'>
+		<div className='tile is-parent is-rounded'>
 			{show &&
 				props.teamStatus &&
 				props.teamStatus
