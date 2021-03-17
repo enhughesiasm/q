@@ -16,42 +16,42 @@ class Giphy extends Component {
 	}
 
 	componentDidMount() {
-		var requestEndpoint =
-			this.state.endPoint +
-			'?api_key=' +
-			this.state.apiKey +
-			'&tag=' +
-			this.props.tag +
-			'&rating=' +
-			this.state.rating;
-
-		fetch(requestEndpoint, {
-			method: 'GET',
-		})
-			.then((result) => result.json())
-			.then((gif) => {
-				this.setState({
-					imgUrl: gif.data.images.fixed_height.url,
-					visible: true,
-				});
-			})
-			.catch((e) => {
-				console.log("Couldn't load from giphy");
-			});
+		// var requestEndpoint =
+		// 	this.state.endPoint +
+		// 	'?api_key=' +
+		// 	this.state.apiKey +
+		// 	'&tag=' +
+		// 	this.props.tag +
+		// 	'&rating=' +
+		// 	this.state.rating;
+		// fetch(requestEndpoint, {
+		// 	method: 'GET',
+		// })
+		// 	.then((result) => result.json())
+		// 	.then((gif) => {
+		// 		this.setState({
+		// 			imgUrl: gif.data.images.fixed_height.url,
+		// 			visible: true,
+		// 		});
+		// 	})
+		// 	.catch((e) => {
+		// 		console.log("Couldn't load from giphy");
+		// 	});
 	}
 
 	render() {
-		let poweredByLocation = this.props.colour == 'light' ? black : white;
+		// let poweredByLocation = this.props.colour === 'light' ? black : white;
 
 		return (
-			<div style={{ opacity: this.state.visible ? 1 : 0 }}>
-				<p>
-					<img src={this.state.imgUrl} />
-				</p>
-				<p>
-					<img src={poweredByLocation} />
-				</p>
-			</div>
+			<></>
+			// <div style={{ opacity: this.state.visible ? 1 : 0 }}>
+			// 	<p>
+			// 		<img src={this.state.imgUrl} alt='a random animated gif'/>
+			// 	</p>
+			// 	<p>
+			// 		<img src={poweredByLocation} alt='powered by Giphy' />
+			// 	</p>
+			// </div>
 		);
 	}
 }

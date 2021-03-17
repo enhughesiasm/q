@@ -7,8 +7,6 @@ import PlayerRounds from './player_rounds_table';
 const BetweenRounds = (props) => {
 	let completedRounds = props.rounds.slice(0, props.finishedRounds);
 
-	console.log(props.playerStatus);
-
 	return (
 		<div>
 			<WelcomeBanner

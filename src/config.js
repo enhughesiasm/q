@@ -4,8 +4,8 @@ const config = {
 	isDev: !prod,
 	socket: {
 		protocol: !prod ? 'http' : 'https',
-		port: !prod ? 4008 : 4008,
-		address: !prod ? 'localhost' : 's.enhughesiasm.com',
+		port: !prod ? 4008 : 443,
+		address: !prod ? 'localhost' : 'quizzler-server.herokuapp.com',
 	},
 	quiz: {
 		showRoundFinishedScreenForMilliseconds: 5000,

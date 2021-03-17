@@ -56,23 +56,23 @@ const AnsweredQuestion = (props) => {
 					'notification is-marginless has-text-centered ' +
 					(answeredCorrectly ? 'is-success' : 'is-danger')
 				}>
-				<button
-					className='button is-medium is-size-6-mobile is-fullwidth is-warning'
-					onClick={props.onClickNextQuestion}>
-					NEXT QUESTION
-				</button>
 				<h1
-					className='title is-spaced is-size-4 is-size-6-mobile '
+					className='title is-spaced is-size-3 is-size-5-mobile '
 					style={{ marginTop: '0.5rem' }}>
 					{answeredCorrectly ? 'CORRECT' : 'INCORRECT'}
 				</h1>
 				<h2 className='subtitle is-spaced is-size-5 is-size-6-mobile '>
 					You {answeredCorrectly ? 'gained' : 'lost'}{' '}
-					<span className='has-text-bold is-size-3 is-size-5-mobile '>
+					<span className='has-text-weight-bold is-size-4 is-size-5-mobile '>
 						{Math.abs(question.pointsEarned)}
 					</span>{' '}
 					points.{' '}
 				</h2>
+				<button
+					className='button is-medium is-size-6-mobile is-fullwidth is-warning'
+					onClick={props.onClickNextQuestion}>
+					NEXT QUESTION
+				</button>
 				<Giphy tag={answeredCorrectly ? 'celebration' : 'sad'} />
 			</div>
 		</div>

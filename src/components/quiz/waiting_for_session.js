@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import BounceLoaderWrapper from '../shared/bounce_loader_wrapped';
 import Giphy from '../shared/giphy';
 import WelcomeBanner from './welcome_banner';
 
