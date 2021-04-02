@@ -366,11 +366,11 @@ class Admin extends Component {
 								<h2 className='subtitle is-size-4'>
 									Available Platonic Rounds
 								</h2>
-								<p>
+								<div>
 									(
 									<span className='has-text-info'>Maths</span>{' '}
 									/ Not Maths)
-								</p>
+								</div>
 								<PlatonicRoundsTable
 									platonicRounds={this.state.platonicRounds}
 								/>
@@ -382,7 +382,7 @@ class Admin extends Component {
 										<h2 className='subtitle is-size-4'>
 											Dangerous Nonsense
 										</h2>
-										<p>
+										<div>
 											<button
 												className='button is-danger'
 												onClick={
@@ -390,8 +390,8 @@ class Admin extends Component {
 												}>
 												Wipe All Data
 											</button>
-										</p>
-										<p>
+										</div>
+										<div>
 											<button
 												className='button is-danger'
 												onClick={
@@ -399,7 +399,7 @@ class Admin extends Component {
 												}>
 												Reseed Database
 											</button>
-										</p>
+										</div>
 									</div>
 								</div>
 							)}

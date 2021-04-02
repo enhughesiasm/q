@@ -19,7 +19,7 @@ const TeamStatus = (props) => {
 						)[0];
 
 						return (
-							<p
+							<div
 								key={i}
 								className='tile is-child has-text-white is-size-4 is-size-6-mobile'
 								style={{
@@ -47,7 +47,7 @@ const TeamStatus = (props) => {
 								<span className='has-text-weight-bold is-size-3 is-size-5-mobile'>
 									{ts.totalScore ? ts.totalScore : 0} points
 								</span>
-							</p>
+							</div>
 						);
 					})}
 		</div>

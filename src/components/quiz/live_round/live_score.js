@@ -37,11 +37,13 @@ export default class LiveScore extends Component {
 		let currentScore = 0;
 
 		let roundScore = this.props.playerStatus.scoresByRoundInstanceId.find(
-			(r) => r[this.props.roundInstanceId] !== undefined
+			(rs) => rs[0]?.toString() === this.props.roundInstanceId.toString()
 		);
 
-		if (roundScore) {
-			currentScore = roundScore[this.props.roundInstanceId] ?? 0;
+		console.log(roundScore);
+
+		if (roundScore && roundScore.length > 0) {
+			currentScore = roundScore[1] ?? 0;
 		}
 
 		let showChangeAnimation = this.state.changeInTotalScore !== 0;
