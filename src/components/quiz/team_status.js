@@ -8,7 +8,7 @@ const TeamStatus = (props) => {
 		props.teams.length > 0;
 
 	return (
-		<div className='tile is-parent is-rounded'>
+		<div className='tile is-parent is-rounded' style={{ padding: '1rem' }}>
 			{show &&
 				props.teamStatus &&
 				props.teamStatus
@@ -21,9 +21,10 @@ const TeamStatus = (props) => {
 						return (
 							<div
 								key={i}
-								className='tile is-child has-text-white is-size-4 is-size-6-mobile'
+								className='tile is-child has-text-white is-size-4 is-size-6-mobile is-rounded '
 								style={{
 									background: team.colour,
+									borderRadius: '4px',
 								}}>
 								<span className='has-text-weight-bold'>
 									Team {team.name}

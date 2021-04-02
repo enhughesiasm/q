@@ -50,20 +50,22 @@ export default class LiveScore extends Component {
 		return (
 			<div className='notification is-info is-clearfix'>
 				<h1
-					className='title is-size-5 is-size-6-mobile is-pulled-left'
+					className='title is-size-5 is-size-6-mobile py-2'
 					style={{ marginBottom: 0 }}>
 					Your Score This Round:{' '}
-					<span className='has-text-weight-bold is-size-4 has-text-warning'>
+					<span className='has-text-weight-bold  has-text-warning'>
 						{currentScore}
 					</span>
 				</h1>
 				<h1
-					className='title is-size-5 is-size-6-mobile is-pulled-right'
+					className='title is-size-5 is-size-6-mobile py-2'
 					style={{ marginBottom: 0 }}>
 					Your Total Score:{' '}
-					{this.props.playerStatus.totalScore
-						? this.props.playerStatus.totalScore
-						: 0}
+					<span className='has-text-weight-bold has-text-warning'>
+						{this.props.playerStatus.totalScore
+							? this.props.playerStatus.totalScore
+							: 0}
+					</span>
 				</h1>
 				{showChangeAnimation && (
 					<FadeUp

@@ -5,7 +5,7 @@ const config = {
 	socket: {
 		protocol: !prod ? 'http' : 'https',
 		port: !prod ? 4008 : 443,
-		address: !prod ? 'localhost' : 'quizzler-server.herokuapp.com',
+		address: !prod ? '192.168.1.100' : 'quizzler-server.herokuapp.com',
 	},
 	quiz: {
 		showRoundFinishedScreenForMilliseconds: 5000,

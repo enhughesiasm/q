@@ -80,6 +80,9 @@ const BetweenRounds = (props) => {
 							playerStatus={props.playerStatus}
 							completedRounds={completedRounds}
 						/>
+						<p className='has-text-black has-text-weight-bold mt-6'>
+							Good luck in the next round!
+						</p>
 					</div>
 				</div>
 			)}

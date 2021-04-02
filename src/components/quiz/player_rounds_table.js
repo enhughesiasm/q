@@ -12,7 +12,6 @@ const PlayerRounds = (props) => {
 						let roundId = completedRound.id;
 						props.playerStatus.scoresByRoundInstanceId.forEach(
 							(round, j) => {
-								debugger;
 								if (
 									round[0].toString() === roundId.toString()
 								) {
