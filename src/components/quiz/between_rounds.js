@@ -24,14 +24,8 @@ const BetweenRounds = (props) => {
 									teams={props.teams}
 								/>
 							)}
-						<hr />
 						<h2 className='subtitle is-size-6-mobile bo'>
-							After{' '}
-							<span className='has-text-info is-size-4 is-size-5-mobile has-text-weight-bold'>
-								{props.finishedRounds}
-							</span>{' '}
-							round{props.finishedRounds > 1 ? 's' : ''}, your
-							personal score is{' '}
+							Your personal score is{' '}
 							<span
 								className={
 									(props.playerStatus.totalScore < 0
@@ -42,14 +36,14 @@ const BetweenRounds = (props) => {
 								{props.playerStatus.totalScore
 									? props.playerStatus.totalScore
 									: 0}
-							</span>
+							</span>{' '}
+							after{' '}
+							<span className='has-text-info is-size-4 is-size-5-mobile has-text-weight-bold'>
+								{props.finishedRounds}
+							</span>{' '}
+							round{props.finishedRounds > 1 ? 's' : ''}
 						</h2>
 						<h3 className='subtitle is-size-6-mobile'>
-							You&apos;ve answered{' '}
-							<span className='has-text-info is-size-4 is-size-5-mobile has-text-weight-bold'>
-								{props.playerStatus.questionsAnswered}
-							</span>{' '}
-							questions,{' '}
 							<span
 								className={
 									(props.playerStatus.correctAnswers > 0
@@ -59,7 +53,11 @@ const BetweenRounds = (props) => {
 								}>
 								{props.playerStatus.correctAnswers}
 							</span>{' '}
-							correctly
+							out of{' '}
+							<span className='has-text-info is-size-4 is-size-5-mobile has-text-weight-bold'>
+								{props.playerStatus.questionsAnswered}
+							</span>{' '}
+							questions correct
 							<span className='has-text-info'>
 								{props.playerStatus.questionsAnswered !== 0
 									? ' (' +

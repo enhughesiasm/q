@@ -40,8 +40,6 @@ export default class LiveScore extends Component {
 			(rs) => rs[0]?.toString() === this.props.roundInstanceId.toString()
 		);
 
-		console.log(roundScore);
-
 		if (roundScore && roundScore.length > 0) {
 			currentScore = roundScore[1] ?? 0;
 		}

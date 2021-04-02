@@ -12,15 +12,18 @@ const PlayerRounds = (props) => {
 						let roundId = completedRound.id;
 						props.playerStatus.scoresByRoundInstanceId.forEach(
 							(round, j) => {
-								if (round[roundId] !== undefined) {
-									roundScore = round[roundId];
+								debugger;
+								if (
+									round[0].toString() === roundId.toString()
+								) {
+									roundScore = round[1];
 								}
 							}
 						);
 						return (
 							<tr key={i}>
 								<td style={{ minWidth: '50%' }}>
-									Round {i + 1}
+									Round {completedRound.roundNumber}
 								</td>
 								<td>{completedRound.name}</td>
 								<td
@@ -29,7 +32,7 @@ const PlayerRounds = (props) => {
 											? 'has-text-success'
 											: 'has-text-danger'
 									}>
-									{roundScore}
+									{roundScore || '-'}
 								</td>
 							</tr>
 						);
