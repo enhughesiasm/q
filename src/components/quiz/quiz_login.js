@@ -355,6 +355,18 @@ class QuizLogin extends Component {
 	receiveQuestion(playerQuestion) {
 		if (playerQuestion && playerQuestion.roundInstanceId) {
 			this.setState({ nextPlayerQuestion: playerQuestion });
+		} else {
+			console.log('Error loading question');
+
+			const liveRound = this.state.rounds.allRoundInstances.find(
+				(r) => r.isLive
+			);
+
+			setTimeout(() => {
+				if (liveRound && liveRound.pullNextQuestion) {
+					liveRound.pullNextQuestion(liveRound);
+				}
+			}, 1500);
 		}
 	}
 
