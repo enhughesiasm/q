@@ -6,8 +6,7 @@ const QuizExplanation = () => (
 			<p>What is this?</p>
 		</div>
 		<div className='message-body'>
-			This part of the site is for{' '}
-			<strong>live interactive experiences</strong>.
+			This is for <strong>live interactive experiences</strong>.
 			<p>
 				If you&apos;re attending a live session, enter your{' '}
 				<strong>name</strong> and the <strong>entry word</strong> above,

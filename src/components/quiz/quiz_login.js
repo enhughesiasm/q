@@ -129,6 +129,16 @@ class QuizLogin extends Component {
 			'error loading question',
 			((roundInstanceId) => {
 				console.log('error loading question!');
+				const liveRound = this.state.rounds.allRoundInstances.find(
+					(r) => r.isLive
+				);
+
+				// probably a temporary server glitch, wait a couple of seconds and try again
+				setTimeout(() => {
+					if (liveRound && liveRound.pullNextQuestion) {
+						liveRound.pullNextQuestion(liveRound);
+					}
+				}, 5000);
 			}).bind(this)
 		);
 
@@ -362,11 +372,12 @@ class QuizLogin extends Component {
 				(r) => r.isLive
 			);
 
+			// probably a temporary server glitch, wait a couple of seconds and try again
 			setTimeout(() => {
 				if (liveRound && liveRound.pullNextQuestion) {
 					liveRound.pullNextQuestion(liveRound);
 				}
-			}, 1500);
+			}, 2000);
 		}
 	}
 

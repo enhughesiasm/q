@@ -25,11 +25,11 @@ const NavBar = () => (
 				return to interactive login
 			</NavLink> */}
 			</div>
-			<div className='navbar-end'>
+			{/* <div className='navbar-end'>
 				<a className='navbar-item' href='http://www.enhughesiasm.com'>
 					return to enhughesiasm
 				</a>
-			</div>
+			</div> */}
 		</div>
 	</nav>
 );
