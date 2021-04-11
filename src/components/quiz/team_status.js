@@ -34,7 +34,7 @@ const TeamStatus = (props) => {
 								<br />
 								{ts.playerNames &&
 									Array.isArray(ts.playerNames) && (
-										<div>
+										<div className='is-flex is-flex-wrap-wrap is-flex-direction-row'>
 											{ts.playerNames.map((name) => (
 												<span
 													key={`team-${i}-${name}`}
